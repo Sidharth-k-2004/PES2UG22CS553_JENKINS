@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'output.exe'
+                sh './output'
             }
         }
         stage('Deploy') {
@@ -29,6 +29,6 @@ pipeline {
     post {
         failure {
             error 'Pipeline failed'
-        }
-    }
+        }
+    }
 }
