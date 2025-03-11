@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh './output'
+                sh 'output.exe'
             }
         }
         stage('Deploy') {
