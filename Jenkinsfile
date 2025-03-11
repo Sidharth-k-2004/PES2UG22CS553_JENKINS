@@ -3,7 +3,7 @@ pipeline {
     stages {
         // stage('Clone repository') {
         //     steps {
-        //         checkout([[$class: 'GitSCM',
+        //         checkout([$class: 'GitSCM',
         //         branches: [[name: '*/main']],
         //         userRemoteConfigs: [[url: 'https://github.com/JatinSharma159/Jenkins.git']]
         //         ])
@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'output.exe'
+                sh './output'
             }
         }
         stage('Deploy') {
@@ -29,6 +29,6 @@ pipeline {
     post {
         failure {
             error 'Pipeline failed'
-        }
-    }
+        }
+    }
 }
